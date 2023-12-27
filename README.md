@@ -1,4 +1,4 @@
-# chatSaas
+# Chat SaaS
 
 ## Getting started
 
