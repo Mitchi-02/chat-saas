@@ -13,7 +13,7 @@ Don't forget to fill docker compose db credentials, and server container env.
 docker compose up
 ```
 #### Without Docker
-Don't forget to fill the env variables.
+Don't forget to fill the env variables and start a mongodb server.
 ```
 cd server
 cp .env.local.example .env
