@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  db_dev:
+    image: mongo:jammy
+    container_name: db_c_dev
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=chat
+    hostname: db_dev
+    ports:
+      - "27017:27017"
+    volumes:
+      - ../../db:/data/db
+    restart: on-failure
+    networks:
+      - network
+
+  server_dev:
+    build: ../../server
+    container_name: server_c_dev
+    volumes:
+      - ../../server:/opt/chat-server
+    environment:
+      - DB_CONNECTION=mongodb://user:password@db_dev:27017
+      - SERVER_PORT=4000
+      - SECRET_KEY=*F-JaNdRgUkXn2r5u8x/A?D(G+KbPeSh
+      - NODE_ENV=developement
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db_dev
+    restart: on-failure
+    networks:
+      - network
+    entrypoint: /opt/chat-server/entrypoint.dev.sh
+
+networks:
+  network:
+    driver: bridge
