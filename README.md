@@ -1,5 +1,5 @@
 # Chat SaaS
-My internship project at [Icosnet](https://icosnet.com.dz/). You can read the documentation from [here](https://drive.google.com/file/d/1fXDXZJQEer1yv-ZTajMFVqv4KCHf7e_S/view?usp=sharing)
+My internship project at [Icosnet](https://icosnet.com.dz/). You can read the documentation from [here](https://drive.google.com/file/d/1adG5pWe_yIKPHsgGYlukDx9v5KQuzze3/view?usp=drive_link).
 - The server is built using Node 18 (typescript), Express, SocketIO and MongoDB.
 - The demo third party app is built using Next 13.
 ## Getting started
